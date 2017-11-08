@@ -1,0 +1,22 @@
+postgresql: &postgresql
+  adapter: postgresql
+  host: localhost
+  pool: 5
+  timeout: 5000
+  username: unirate
+  password: unirate
+
+development:
+  <<: *postgresql
+  database: unirate_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *postgresql
+  database: unirate_test
+
+production:
+  <<: *postgresql
+  database: unirate_production
