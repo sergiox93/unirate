@@ -1,0 +1,21 @@
+<%= form_for(@materium) do |f| %>
+  <% if @materium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@materium.errors.count, "error") %> prohibited this materium from being saved:</h2>
+
+      <ul>
+      <% @materium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom_materia %><br>
+    <%= f.text_field :nom_materia %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
